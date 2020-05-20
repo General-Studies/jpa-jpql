@@ -11,6 +11,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@NamedQueries ({
+	@NamedQuery(name="findSumOfAccountMovimentation", query = "select sum(am.amount) from AccountMovimentation am"),
+	@NamedQuery(
+		name="findSumOfAccountMovimentationUsingJoinAnd", 
+		query = "select am from AccountMovimentation am where am.account = :pAccount and am.operationType = :pOperationType")
+})
 public final class AccountMovimentation implements Serializable, BaseEntity {
 	private static final long serialVersionUID = 1L;
 

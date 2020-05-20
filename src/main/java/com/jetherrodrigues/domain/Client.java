@@ -7,12 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 
 @Entity
+@NamedQueries ({
+	@NamedQuery(name="findAllClient", query = "select c from Client c")
+})
 public final class Client implements Serializable, BaseEntity {
 
 	private static final long serialVersionUID = 1L;

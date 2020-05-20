@@ -27,6 +27,10 @@ public final class Category implements Serializable, BaseEntity {
 		this.name = name;
 	}
 
+	public Category(final Long id) {
+		this.id = id;
+	}
+
 	public Long getId() {
 		return id;
 	}
