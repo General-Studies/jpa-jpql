@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  mysqlsrv:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "whizlab"
+      MYSQL_DATABASE: "whizlab"
+    ports:
+      - "3306:3306"
+    volumes:
+      - whizlabdb:/var/lib/mysql
+    networks:
+      - mysql-compose-network
+
+  adminer:
+    image: adminer
+    ports:
+      - 18080:8080
+    networks:
+      - mysql-compose-network
+
+volumes:
+  whizlabdb:
+
+networks: 
+  mysql-compose-network:
+    driver: bridge

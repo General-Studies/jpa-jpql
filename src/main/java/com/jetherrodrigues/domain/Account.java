@@ -72,4 +72,14 @@ public final class Account implements Serializable, BaseEntity {
 		this.amount = amount;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Account [id=")
+				.append(id)
+				.append(", branch=").append(branch)
+				.append(", number=").append(number)
+				.append(", amount=").append(amount);
+		return builder.toString();
+	}
 }

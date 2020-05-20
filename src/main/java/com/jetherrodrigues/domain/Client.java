@@ -76,4 +76,14 @@ public final class Client implements Serializable, BaseEntity {
 		this.account = account;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Client [id=")
+				.append(id)
+				.append(", name=").append(name)
+				.append(", email=").append(email)
+				.append("]");
+		return builder.toString();
+	}
 }
