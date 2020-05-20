@@ -3,12 +3,12 @@ services:
   mysqlsrv:
     image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: "whizlab"
-      MYSQL_DATABASE: "whizlab"
+      MYSQL_ROOT_PASSWORD: "whizlabs"
+      MYSQL_DATABASE: "whizlabs"
     ports:
       - "3306:3306"
     volumes:
-      - whizlabdb:/var/lib/mysql
+      - whizlabsdb:/var/lib/mysql
     networks:
       - mysql-compose-network
 
@@ -20,7 +20,7 @@ services:
       - mysql-compose-network
 
 volumes:
-  whizlabdb:
+  whizlabsdb:
 
 networks: 
   mysql-compose-network:
